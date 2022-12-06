@@ -42,7 +42,7 @@
     console.log("Hello World!")
   </script> -->
 
-  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
   <script>
     function createUniversalLink() {
     }
@@ -54,29 +54,58 @@
     }
 
     function closed() {
+      liff.closeWindow()
     }
 
-    async function scanCode() {
-    }
+    // async function scanCode() {
+    //   const result = await liff.scanCode()
+    //   document.getElementById("scanCode").append(result.value
+    // }
+
+
 
     function openWindow() {
+      liff.openWindow({
+        url: "https://www.rintip.co.th/",
+        external: true
+      })
     }
+
 
     async function getFriendship() {
     }
 
     async function sendMsg() {
+       // alert("Message sent")
+      if (liff.getContext().type !== "none"){
+      await liff.sendMessages([
+        {
+          "type": "sticker",
+          "stickerId": 2,
+          "packageId": 1
+        }
+      ])
+      alert("Message sent")
+      }
     }
 
     function getContext() {
+      document.getElementById("type").append(liff.getContext().type)
+      document.getElementById("viewType").append(liff.getContext().viewType)
+      document.getElementById("utouId").append(liff.getContext().utouId)
+      document.getElementById("roomId").append(liff.getContext().roomId)
+      document.getElementById("groupId").append(liff.getContext().groupId)
+
     }
 
     async function getUserProfile() {
       const profile = await liff.getProfile()
+
       document.getElementById("pictureUrl").src = profile.pictureUrl
-      document.getElementById("userID").append(profile.userID)
+      document.getElementById("userId").append(profile.userId)
       document.getElementById("statusMessage").append(profile.statusMessage)
       document.getElementById("displayName").append(profile.displayName)
+      document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
 
     }
 
@@ -102,8 +131,18 @@
     async function main() {
       // alert("LINE Developers x Skooldio")
       await liff.init({ liffId: "1657711762-jN316KyJ" })
-      getEnvironment()
-      getUserProfile()
+
+      document.getElementById("isLoggedIn").append(liff.isLoggedIn())
+      if (liff.isLoggedIn()){
+        getEnvironment()
+        getUserProfile()
+        getContext()
+      }
+      else {
+        liff.login
+      }
+      // getEnvironment()
+      // getUserProfile()
       // getContext()
       // getFriendship()
       // createUniversalLink()
