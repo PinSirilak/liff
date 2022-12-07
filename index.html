@@ -132,18 +132,18 @@
       // alert("LINE Developers x Skooldio")
       await liff.init({ liffId: "1657711762-jN316KyJ" })
 
-      document.getElementById("isLoggedIn").append(liff.isLoggedIn())
-      if (liff.isLoggedIn()){
-        getEnvironment()
-        getUserProfile()
-        getContext()
-      }
-      else {
-        liff.login
-      }
-      // getEnvironment()
-      // getUserProfile()
-      // getContext()
+      // document.getElementById("isLoggedIn").append(liff.isLoggedIn())
+      // if (liff.isLoggedIn()){
+      //   getEnvironment()
+      //   getUserProfile()
+      //   getContext()
+      // }
+      // else {
+      //   liff.login
+      // }
+      getEnvironment()
+      getUserProfile()
+      getContext()
       // getFriendship()
       // createUniversalLink()
     }
