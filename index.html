@@ -29,7 +29,16 @@
   <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
   <p><a href="liff/path/?param=9">Link to Path</a></p>
 
-  <button id="btnMsg" onclick="sendMsg()">Send Message</button>
+
+  <style>
+    .a{
+      background-color: aqua;
+      width: 50%;
+      border-radius: 10;
+    }
+  </style>
+
+  <button class="a" id="btnMsg" onclick="sendMsg()">Send Message</button>
   <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
   <button onclick="openWindow()">Open Window</button>
   <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
@@ -45,22 +54,37 @@
   <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
   <script>
     function createUniversalLink() {
+      const link1 = liff.permanentLink.createUrl()
+      document.getElementById("universalLink1").append(link1)
+
+      liff.permanentLink.setExtraQueryParam('param=9')
+
+      const link2 = liff.permanentLink.createUrl()
+      document.getElementById("universalLink2").append(link2)
     }
 
     async function shareMsg() {
+      await liff.shareTargetPicker([
+        {
+          "type": "text",
+          "text": "This message was sent by ShareTagetPicker"
+        }
+      ])
     }
 
     function logOut() {
+      liff.logout()
+      window.location.reload()
     }
 
     function closed() {
       liff.closeWindow()
     }
 
-    // async function scanCode() {
-    //   const result = await liff.scanCode()
-    //   document.getElementById("scanCode").append(result.value
-    // }
+    async function scanCode() {
+      const result = await liff.scanCode()
+      document.getElementById("scanCode").append(result.value)
+    }
 
 
 
@@ -132,18 +156,20 @@
       // alert("LINE Developers x Skooldio")
       await liff.init({ liffId: "1657711762-jN316KyJ" })
 
-      // document.getElementById("isLoggedIn").append(liff.isLoggedIn())
-      // if (liff.isLoggedIn()){
-      //   getEnvironment()
-      //   getUserProfile()
-      //   getContext()
-      // }
-      // else {
-      //   liff.login
-      // }
-      getEnvironment()
-      getUserProfile()
-      getContext()
+      document.getElementById("isLoggedIn").append(liff.isLoggedIn())
+
+      if (liff.isLoggedIn()){
+        getEnvironment()
+        getUserProfile()
+        getContext()
+        createUniversalLink()
+      }
+      else {
+        liff.login()
+      }
+      // getEnvironment()
+      // getUserProfile()
+      // getContext()
       // getFriendship()
       // createUniversalLink()
     }
