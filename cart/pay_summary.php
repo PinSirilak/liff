@@ -55,6 +55,8 @@
 
 
 
+
+
   <style>
   .sizeImgLogo {
     width: 60px;
@@ -62,38 +64,41 @@
 
   .sizeImgMenu {
     width: 21px;
-    /* margin-top: 12px; */
   }
 
   .broderBotton {
     border-bottom: 1px solid #d5d5d5;
     padding: 10px;
-    /* margin-top: 10px; */
   }
 
+  .broderB {
+    border-bottom: 1px solid #d5d5d5;
+    margin: 10px;
+    padding-bottom: 20px;
+  }
+
+  p {
+    border-bottom: 0px dashed #ddd;
+  }
+
+
+  .pDetail {
+    font-size: 12px;
+    margin-top: -15px;
+    margin-left: 30px;
+  }
+
+
+  .p {
+    font-size: 14px;
+    margin-top: 15px;
+    font-weight: bold;
+    margin-left: 30px;
+  }
 
   .front {
     font-size: 16px;
     margin-top: 5px;
-  }
-
-  .pb-0 {
-    padding-bottom: 0px
-  }
-
-
-  .cardBox {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    /* border: 1px solid rgba(0, 0, 0, .125); */
-    border-radius: .25rem;
-    margin: 10px;
-    padding: 10px
   }
 
   .imgPro3 {
@@ -101,11 +106,63 @@
     margin: 15px;
   }
 
-  .p {
-    font-size: 14px;
-    margin-top: 15px;
+  .abtn {
+    background-color: #0bbc0d;
+    border-color: #0bbc0d;
+  }
+
+
+  .add_btn {
+    background-color: #fff;
+    border-color: #707174;
+  }
+
+
+  .order_btn {
+    background-color: #fff;
+    border-color: #0bbc0d;
+    margin: 20px 0px 20px;
+  }
+
+  .w_text_order {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0bbc0d;
+    margin-bottom: 0px;
+  }
+
+  .wText {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffff;
+    margin-bottom: 0px;
+  }
+
+  .w_text_add {
+    font-size: 16px;
+    font-weight: bold;
+    color: #707174;
+    margin-bottom: 0px;
+  }
+
+  .rLayOut {
+    font-size: 16px;
+    margin-top: 5px;
     font-weight: bold;
     margin-left: 30px;
+
+  }
+
+  .layout_btn {
+    padding: 0px 8px 0px
+  }
+
+  .product_variant.quantity label {
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0;
   }
 
   .pTotal {
@@ -123,70 +180,71 @@
     margin-left: 10px;
   }
 
-  p {
-    border-bottom: 0px dashed #ddd;
+  .lay_out_order {
+    margin: 20px 10px 20px;
   }
 
-  .pDetail {
-    font-size: 12px;
-    margin-top: -15px;
-    margin-left: 30px;
+  .lay_out_order_1 {
+    margin: 0px 10px 0px;
   }
 
-
-  .wInput {
-    width: 45%
-  }
-
-  .mt-20 {
-    margin: 30% 0 10%;
-  }
-
-
-  .rLayOut {
-    font-size: 14px;
-    margin-top: 5px;
-    font-weight: bold;
-    margin-left: 30px;
-
-  }
-
-  .broderB {
-    border-bottom: 1px solid #d5d5d5;
-    margin: 10px;
-    padding-bottom: 20px;
-  }
-
-  .abtn {
-    background-color: #0bbc0d;
-    border-color: #0bbc0d;
-  }
-
-
-  .wText {
+  .h_order {
     font-size: 18px;
     font-weight: bold;
-    color: #ffff;
+  }
+
+
+  .h-6 {
+    font-size: 18px;
+    font-weight: bold;
     margin-bottom: 0px;
   }
+
+  .p_font {
+    font-size: 14px;
+    margin-bottom: 0px;
+    color: #b7b3b3;
+  }
+
+  .container {
+    margin: 20% 0% 10%;
+  }
   </style>
+
+
+
 
 </head>
 
 <body style="background-color: #ffff;">
 
 
-  <div class="row broderBotton">
-    <div class="col-3">
-      <img class="sizeImgLogo" src="../image/100.png" alt="" />
+
+  <div class='row broderBotton'>
+    <div class='col-3'>
+      <img class='sizeImgLogo' src='../image/100.png' alt='' />
     </div>
-    <div class="col-7 text-center">
-      <p class="front"><b>ตะกร้าสินค้า</b></p>
+    <div class='col-7 text-center'>
+      <p class='front'><b>จัดการคำสั่งซื้อ</b></p>
     </div>
-    <div class="col-2 " style="text-align: right;">
-      <img class="sizeImgMenu" src="../image/Component_161.png" alt="" />
+    <div class='col-2' style='text-align: right;'>
+      <img class='sizeImgMenu' src='../image/Component_161.png' alt='' />
     </div>
   </div>
+
+
+
+
+  <div class="d-grid gap-2 col-7 mx-auto">
+    <button class="btn order_btn  w_text_order" type="button"> Order ID : 65423927</button>
+  </div>
+
+
+
+  <div class="row lay_out_order">
+    <div class="col-12"><u class="h_order">คำสั่งซื้อ</u></div>
+  </div>
+
 
   <div class="broderB">
     <div class="row">
@@ -194,25 +252,21 @@
         <img class="imgPro3" src="../image/P3.jpg" alt="...">
       </div>
       <div class="col-9">
-        <p class="p">น้ำมันปาล์มโอเลอีนแบบขวด ขนาด 1 ลิตร</p>
+        <p class="p">น้ำมันปาล์มโอเลอีนแบบขวดขนาด 1 ลิตร</p>
         <p class="pDetail">บรรจุ 12 ขวด / กล่อง</p>
-
         <div class="row">
           <div class="col-7">
             <div class="product_variant quantity rLayOut">
-              <label>จำนวน &nbsp;&nbsp;</label><input class="wInput" min="1" value="1" type="number">
+              <label>3 x 590</label>
             </div>
           </div>
           <div class="col-2 rLayOut">
-            590
+            1,770
           </div>
         </div>
-
       </div>
     </div>
   </div>
-
-
 
   <div class="broderB">
     <div class="row">
@@ -222,25 +276,23 @@
       <div class="col-9">
         <p class="p">น้ำมันปาล์มโอเลอีนแบบถุงขนาด 1 ลิตร</p>
         <p class="pDetail">บรรจุ 12 ถุง / กล่อง</p>
-
         <div class="row">
           <div class="col-7">
             <div class="product_variant quantity rLayOut">
-              <label>จำนวน &nbsp;&nbsp;</label><input class="wInput" min="1" value="1" type="number">
+              <label>4 x 590</label>
             </div>
           </div>
           <div class="col-2 rLayOut">
-            590
+            2,360
           </div>
         </div>
-
       </div>
     </div>
   </div>
 
 
   <div class="broderB">
-    <div class="row">
+    <div class="row ">
       <div class="col-9">
         <p class="pTotal_1">รวม</p>
       </div>
@@ -251,26 +303,30 @@
   </div>
 
 
-  <?php
 
-     $address = "test";
 
-     if ($address == "") {
-       $link_address = "../cart/address_form.php";
-     } elseif ($address != "") {
-       $link_address =  "../cart/address_add_form.php";
-     }
+  <div class="row lay_out_order">
+    <div class="col-12"><u class="h_order">คำสั่งซื้อ</u></div>
+  </div>
 
-      echo "
-      <div class='d-grid gap-5 col-11 mx-auto'>
-          <a href='$link_address' class='btn abtn mt-20' type='submit'>
-            <p class='wText'>ดำเนินการต่อ</p>
-          </a>
+
+  <div class="broderB">
+    <div class="row">
+      <div class="col-12 lay_out_order_1">
+        <p class="h-6">ศิริวัฒน์ ทรัพย์ทวีพงศ์</p>
+        <p class="p_font">5/353 ม.5 เทพารักษ์ 66 ตำบลบางเมือง</p>
+        <p class="p_font">อำเภอเมืองสมุทรปราการ จังหวัดสมุทรปราการ </p>
+        <p class="p_font">รหัสไปรษณ์ 10270 เบอร์โทรศัพท์ 0123456789</p>
       </div>
-      ";
+    </div>
+  </div>
 
-     ?>
 
+  <div class='d-grid gap-5 col-11 mx-auto'>
+    <a href='../cart/confirm_payment.php' class='btn abtn mt-20' type='submit'>
+      <p class='wText'>แจ้งชำระเงิน</p>
+    </a>
+  </div>
 
 
 

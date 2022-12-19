@@ -134,18 +134,12 @@
       <p class="front"><b>รายการสินค้า</b></p>
     </div>
     <div class="p-2">
-      <!-- <img class="sizeImgฺBasket" src="image/Group_2.png" alt="" /> -->
       <a href="cart/index.php"><img class="sizeImgฺBasket" src="image/Group_2.png" alt="" /></a>
     </div>
     <div class="p-2">
       <img class="sizeImgMenu" src="image/Component_161.png" alt="" />
     </div>
   </div>
-
-
-
-
-
 
 
 
