@@ -207,6 +207,35 @@
 
 
 
+  <script>
+  function getFriendship() {
+    const friend = liff.getFriendship();
+    document.getElementById("friendship").append(friend.friendFlag);
+    if (!friend.friendFlag) {
+      if (confirm("คุณยังไม่ได้เพิ่ม Rintip เป็นเพื่อน จะเพิ่มเลยไหม?")) {
+        window.location = "https://lin.ee/NcyQM2W"
+      }
+    }
+
+  }
+
+
+  async function main() {
+    // alert("LINE Developers x Skooldio")
+    await liff.init({
+      liffId: "1657711762-jN316KyJ"
+    })
+    // getEnvironment()
+    // getUserProfile()
+    // getContext()
+    getFriendship()
+    // createUniversalLink()
+  }
+  main()
+  </script>
+
+
+
 </body>
 
 </html>
