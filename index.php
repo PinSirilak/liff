@@ -58,6 +58,11 @@
     width: 60px;
   }
 
+  .sizeImgLogo_1 {
+    width: 80px;
+    margin-bottom: 20px;
+  }
+
   .front {
     size: 12px;
   }
@@ -111,12 +116,130 @@
     border-bottom: 0px dashed #ddd;
   }
 
-
-
   .abtn {
     background-color: #0bbc0d;
     border-color: #0bbc0d;
     color: #ffff;
+  }
+
+
+
+  .btn:hover {
+    color: #fff
+  }
+
+
+
+
+
+
+  .app-menu--icon {
+    width: 35px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+  }
+
+  .app-menu--icon span {
+    background-color: #fff;
+    position: absolute;
+    border-radius: 2px;
+    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+    width: 100%;
+    height: 2px;
+    transition-duration: 500ms
+  }
+
+  .app-menu--icon span:nth-child(1) {
+    top: 0px;
+    left: 0px;
+  }
+
+  .app-menu--icon span:nth-child(2) {
+    top: 13px;
+    left: 0px;
+    opacity: 1;
+  }
+
+  .app-menu--icon span:nth-child(3) {
+    bottom: 0px;
+    left: 0px;
+  }
+
+  .app-menu.open .app-menu--icon span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 13px;
+  }
+
+  .app-menu.open .app-menu--icon span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .app-menu.open .app-menu--icon span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 13px;
+  }
+
+  .app-menu {
+    width: 35px;
+    height: 30px;
+    margin-left: auto;
+    padding: 1rem;
+    transition-duration: 500ms;
+    overflow: hidden;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+    border-bottom-left-radius: 50%;
+  }
+
+  .app-menu.open {
+    height: calc(100%);
+    width: calc(100% - 2rem);
+    margin-left: auto;
+    background-color: rgb(255 255 255);
+    border-radius: 0;
+  }
+
+  .app-menu--content {
+
+    text-align: center;
+  }
+
+  .app-menu.open .app-menu--content {}
+
+  .app-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: white;
+    position: absolute;
+    top: 3.5rem;
+    right: 0;
+    left: 0;
+  }
+
+  .app-content a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+
+
+
+  .sizeImgClose {
+    width: 30px;
+    height: 30px;
+    margin-top: 5px
+  }
+
+  .layOut_logo {
+    align-self: flex-start;
   }
   </style>
 </head>
@@ -124,90 +247,136 @@
 <body style="background-color: #d9d9d9;">
 
 
-
-  <div class="d-flex mb-3 " style="background-color: #ffff;">
-    <div class="me-auto p-2">
-      <img class="sizeImgLogo" src="image/100.png" alt="" />
-    </div>
-
-    <div class="me-auto p-3">
-      <p class="front"><b>รายการสินค้า</b></p>
-    </div>
-    <div class="p-2">
-      <a href="cart/index.php"><img class="sizeImgฺBasket" src="image/Group_2.png" alt="" /></a>
-    </div>
-    <div class="p-2">
-      <img class="sizeImgMenu" src="image/Component_161.png" alt="" />
-    </div>
-  </div>
+  <input type="hidden" id="friendship" name="" value="">
 
 
+  <input type="hidden" id="friendship" name="" value="">
 
-  <div class="card">
-    <div class="d-flex">
-      <img class="sizeImgProdeuct" src="image/P3.jpg" alt="" />
-    </div>
+  <div class="app">
 
-    <div class="d-flex">
-      <div class="p-2 w-100 frontPro">น้ำมันปาล์มโอเลอีนแบบขวด ขนาด 1 ลิตร</div>
-      <div class="p-2 flex-shrink-1 frontPro">590</div>
-    </div>
+    <div class="d-flex mb-3 " style="background-color: #ffff;">
+      <div class="me-auto p-2">
+        <img class="sizeImgLogo" src="image/100.png" alt="" />
+      </div>
 
-    <div class="d-flex">
-      <div class="p-2 w-100 frontProDetail">บรรจุ 12 ขวด / กล่อง</div>
+      <div class="me-auto p-3">
+        <p class="front"><b>รายการสินค้า</b></p>
+      </div>
+      <div class="p-2">
+        <a href="cart/index.php"><img class="sizeImgฺBasket" src="image/Group_2.png" alt="" /></a>
+      </div>
+      <div class="p-2">
+        <img class="sizeImgMenu" src="image/Component_161.png" alt="" />
+      </div>
     </div>
 
 
-    <div class="d-flex row rLayOut">
-      <div class="p-2  col-7">
-        <div class="product_variant quantity">
-          <label>จำนวน &nbsp;&nbsp;</label><input class="wInput" min="1" value="1" type="number">
-          &nbsp;&nbsp;<label>ลัง</label>
+
+
+    <div class="app-menu" onclick="toggleClassActive()">
+
+
+      <div class="me-auto p-2 text-center">
+        <img class="sizeImgLogo_1" src="image/100.png" alt="" />
+      </div>
+
+
+
+      <div class="app-menu--content">
+        <a href="#">
+          <h6>Menu item 1</h6>
+        </a>
+        <a href="#">
+          <h6>Menu item 1</h6>
+        </a>
+        <a href="#">
+          <h6>Menu item 1</h6>
+        </a>
+        <a href="#">
+          <h6>Menu item 1</h6>
+        </a>
+        <a href="#">
+          <h6>Menu item 1</h6>
+        </a>
+      </div>
+    </div>
+
+
+
+
+    <div class="card">
+      <div class="d-flex">
+        <img class="sizeImgProdeuct" src="image/P3.jpg" alt="" />
+      </div>
+
+      <div class="d-flex">
+        <div class="p-2 w-100 frontPro">น้ำมันปาล์มโอเลอีนแบบขวด ขนาด 1 ลิตร</div>
+        <div class="p-2 flex-shrink-1 frontPro">590</div>
+      </div>
+
+      <div class="d-flex">
+        <div class="p-2 w-100 frontProDetail">บรรจุ 12 ขวด / กล่อง</div>
+      </div>
+
+
+      <div class="d-flex row rLayOut">
+        <div class="p-2  col-7">
+          <div class="product_variant quantity">
+            <label>จำนวน &nbsp;&nbsp;</label><input class="wInput" min="1" value="1" type="number">
+            &nbsp;&nbsp;<label>ลัง</label>
+          </div>
+        </div>
+        <div class="p-2  col-5">
+          <button type="button" class="btn abtn "><img class="ImgฺBasketPro" src="image/Group_1.png" alt="">
+            &nbsp;ใส่ตะกร้า</button>
         </div>
       </div>
-      <div class="p-2  col-5">
-        <button type="button" class="btn abtn "><img class="ImgฺBasketPro" src="image/Group_1.png" alt="">
-          &nbsp;ใส่ตะกร้า</button>
+    </div>
+
+
+    <div class="card">
+      <div class="d-flex">
+        <img class="sizeImgProdeuct" style="margin-top: 0px" src="image/P4.jpg" alt="" />
       </div>
-    </div>
-  </div>
 
-
-  <div class="card">
-    <div class="d-flex">
-      <img class="sizeImgProdeuct" style="margin-top: 0px" src="image/P4.jpg" alt="" />
-    </div>
-
-    <div class="d-flex">
-      <div class="p-2 w-100 frontPro">นน้ำมันปาล์มโอเลอีนแบบถุงขนาด 1 ลิตร</div>
-      <div class="p-2 flex-shrink-1 frontPro">590</div>
-    </div>
+      <div class="d-flex">
+        <div class="p-2 w-100 frontPro">นน้ำมันปาล์มโอเลอีนแบบถุงขนาด 1 ลิตร</div>
+        <div class="p-2 flex-shrink-1 frontPro">590</div>
+      </div>
 
 
 
-    <div class="d-flex">
-      <div class="p-2 w-100 frontProDetail">บรรจุ 12 ถุง / กล่อง</div>
-    </div>
+      <div class="d-flex">
+        <div class="p-2 w-100 frontProDetail">บรรจุ 12 ถุง / กล่อง</div>
+      </div>
 
 
 
-    <div class="d-flex row rLayOut">
-      <div class="p-2  col-7">
-        <div class="product_variant quantity">
-          <label>จำนวน &nbsp;&nbsp;</label><input class="wInput" min="1" value="1" type="number">
-          &nbsp;&nbsp;<label>ลัง</label>
+      <div class="d-flex row rLayOut">
+        <div class="p-2  col-7">
+          <div class="product_variant quantity">
+            <label>จำนวน &nbsp;&nbsp;</label><input class="wInput" min="1" value="1" type="number">
+            &nbsp;&nbsp;<label>ลัง</label>
+          </div>
+        </div>
+        <div class="p-2  col-5">
+          <button type="button" class="btn abtn "><img class="ImgฺBasketPro" src="image/Group_1.png" alt="">
+            &nbsp;ใส่ตะกร้า</button>
         </div>
       </div>
-      <div class="p-2  col-5">
-        <button type="button" class="btn abtn "><img class="ImgฺBasketPro" src="image/Group_1.png" alt="">
-          &nbsp;ใส่ตะกร้า</button>
-      </div>
     </div>
-  </div>
 
+
+  </div>
 
 
   <script>
+  function toggleClassActive() {
+    document.querySelector('.app-menu').classList.toggle("open");
+  }
+
+
+
   function getFriendship() {
     const friend = liff.getFriendship();
     document.getElementById("friendship").append(friend.friendFlag);
@@ -221,15 +390,11 @@
 
 
   async function main() {
-    // alert("LINE Developers x Skooldio")
     await liff.init({
       liffId: "1657711762-jN316KyJ"
     })
-    // getEnvironment()
-    // getUserProfile()
-    // getContext()
-    getFriendship()
-    // createUniversalLink()
+
+    // getFriendship()
   }
   main()
   </script>
