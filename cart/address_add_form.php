@@ -159,6 +159,139 @@
   .container {
     margin: 20% 0% 10%;
   }
+
+
+
+
+  .app-menu--icon {
+    width: 35px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+  }
+
+  .app-menu--icon span {
+    background-color: #fff;
+    position: absolute;
+    border-radius: 2px;
+    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+    width: 100%;
+    height: 2px;
+    transition-duration: 500ms
+  }
+
+  .app-menu--icon span:nth-child(1) {
+    top: 0px;
+    left: 0px;
+  }
+
+  .app-menu--icon span:nth-child(2) {
+    top: 13px;
+    left: 0px;
+    opacity: 1;
+  }
+
+  .app-menu--icon span:nth-child(3) {
+    bottom: 0px;
+    left: 0px;
+  }
+
+  .app-menu.open .app-menu--icon span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 13px;
+  }
+
+  .app-menu.open .app-menu--icon span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .app-menu.open .app-menu--icon span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 13px;
+  }
+
+  .app-menu {
+    width: 35px;
+    height: 30px;
+    margin-left: auto;
+    padding: 1rem;
+    transition-duration: 500ms;
+    overflow: hidden;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+    border-bottom-left-radius: 50%;
+  }
+
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  a h6 {
+    margin-bottom: 15px;
+  }
+
+  .app-menu.open {
+    height: calc(130%);
+    width: calc(100% - 6rem);
+    margin-left: auto;
+    background-color: rgb(255 255 255 / 100%);
+    border-radius: 0;
+  }
+
+
+  a h6:hover {
+    color: #23bc0e;
+  }
+
+
+  .app-menu--content {
+    text-align: left;
+    margin: 10px 20px;
+  }
+
+  .app-menu.open .app-menu--content {}
+
+  .app-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: white;
+    position: absolute;
+    top: 3.5rem;
+    right: 0;
+    left: 0;
+  }
+
+  .app-content a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+
+
+
+  .sizeImgClose {
+    width: 30px;
+    height: 30px;
+    margin-top: 5px
+  }
+
+  .layOut_logo {
+    align-self: flex-start;
+  }
+
+  .sizeImgLogo_1 {
+    width: 80px;
+    margin-bottom: 20px;
+  }
   </style>
 
 
@@ -169,68 +302,120 @@
 <body style="background-color: #ffff;">
 
 
-
-  <div class='row broderBotton'>
-    <div class='col-3'>
-      <img class='sizeImgLogo' src='../image/100.png' alt='' />
-    </div>
-    <div class='col-7 text-center'>
-      <p class='front'><b>ที่อยู่จัดส่ง</b></p>
-    </div>
-    <div class='col-2' style='text-align: right;'>
-      <img class='sizeImgMenu' src='../image/Component_161.png' alt='' />
-    </div>
-  </div>
+  <div class="app">
 
 
-  <div class="broderB">
-    <div class="row">
-      <div class="col-2 text-center">
-        <input type="radio" id="css" name="fav_language" value="CSS" checked>
+    <div class='row broderBotton'>
+      <div class='col-3'>
+        <img class='sizeImgLogo' src='../image/100.png' alt='' />
       </div>
-      <div class="col-10">
-        <p class="p">ศิริวัฒน์ ทรัพย์ทวีพงศ์</p>
-        <p class="pDetail">5/353 ม.5 เทพารักษ์ 66 ตำบลบางเมือง</p>
-        <p class="pDetail">อำเภอเมืองสมุทรปราการ จังหวัดสมุทรปราการ </p>
-        <p class="pDetail">รหัสไปรษณ์ 10270 เบอร์โทรศัพท์ 0123456789</p>
+      <div class='col-7 text-center'>
+        <p class='front'><b>ที่อยู่จัดส่ง</b></p>
+      </div>
+      <div class='col-2' style='text-align: right;'>
+        <img class='sizeImgMenu' src='../image/Component_161.png' alt='' />
       </div>
     </div>
-  </div>
 
 
-  <div class="broderB">
-    <div class="row">
-      <div class="col-2 text-center">
-        <input type="radio" id="html" name="fav_language" value="HTML">
+    <div class="app-menu" onclick="toggleClassActive()">
+
+
+      <div class="me-auto p-2 text-center">
+        <img class="sizeImgLogo_1" src="../image/100.png" alt="" />
       </div>
-      <div class="col-10">
-        <p class="p" for="html">ศิริวัฒน์ ทรัพย์ทวีพงศ์</p>
-        <p class="pDetail">149/7 ม.6 ตำบลบ้านสวน</p>
-        <p class="pDetail">อำเภอเมือง จังหวัดชลบุรี</p>
-        <p class="pDetail">รหัสไปรษณ์ 20000 เบอร์โทรศัพท์ 0123456789</p>
+
+
+
+
+      <div class="app-menu--content">
+        <a href="../index.php">
+          <h6>รายการสินค้า</h6>
+        </a>
+        <a href="../cart/index.php">
+          <h6>ตะกร้าสินค้า</h6>
+        </a>
+        <a href="../cart/address_add_form.php">
+          <h6>ที่อยู่จัดส่ง</h6>
+        </a>
+        <a href="../cart/pay_summary.php">
+          <h6>ขัอมูลบัญชีธนาคาร/บัตร</h6>
+        </a>
+        <a href="../cart/order_management.php">
+          <h6>จัดการคำสั่งซื้อ</h6>
+        </a>
       </div>
     </div>
-  </div>
 
 
-
-  <div class="container text-center">
-    <div class="row row-cols-2">
-      <div class="col-6 layout_btn">
-        <div class='d-grid gap-5 col-12 mx-auto'>
-          <a href='../cart/address_form.php' type="button" class="btn add_btn  w_text_add">
-            + เพิ่มที่อยู่</a>
+    <div class="broderB">
+      <div class="row">
+        <div class="col-2 text-center">
+          <input type="radio" id="css" name="fav_language" value="CSS" checked>
+        </div>
+        <div class="col-10">
+          <p class="p">ศิริวัฒน์ ทรัพย์ทวีพงศ์</p>
+          <p class="pDetail">5/353 ม.5 เทพารักษ์ 66 ตำบลบางเมือง</p>
+          <p class="pDetail">อำเภอเมืองสมุทรปราการ จังหวัดสมุทรปราการ </p>
+          <p class="pDetail">รหัสไปรษณ์ 10270 เบอร์โทรศัพท์ 0123456789</p>
         </div>
       </div>
-      <div class="col-6 layout_btn">
-        <div class='d-grid gap-5 col-12 mx-auto'>
-          <a href='../cart/order_management.php' class='btn abtn mt-20' type='submit'>
-            <p class='wText'>ดำเนินการต่อ</p>
-          </a>
+    </div>
+
+
+
+    <div class="broderB">
+      <div class="row">
+        <div class="col-2 text-center">
+          <input type="radio" id="html" name="fav_language" value="HTML">
+        </div>
+        <div class="col-10">
+          <p class="p" for="html">ศิริวัฒน์ ทรัพย์ทวีพงศ์</p>
+          <p class="pDetail">149/7 ม.6 ตำบลบ้านสวน</p>
+          <p class="pDetail">อำเภอเมือง จังหวัดชลบุรี</p>
+          <p class="pDetail">รหัสไปรษณ์ 20000 เบอร์โทรศัพท์ 0123456789</p>
         </div>
       </div>
     </div>
+
+
+
+    <div class="container text-center">
+      <div class="row row-cols-2">
+        <div class="col-6 layout_btn">
+          <div class='d-grid gap-5 col-12 mx-auto'>
+            <a href='../cart/address_form.php' type="button" class="btn add_btn  w_text_add">
+              + เพิ่มที่อยู่</a>
+          </div>
+        </div>
+        <div class="col-6 layout_btn">
+          <div class='d-grid gap-5 col-12 mx-auto'>
+            <a href='../cart/order_management.php' class='btn abtn mt-20' type='submit'>
+              <p class='wText'>ดำเนินการต่อ</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
   </div>
+
+
+  <script>
+  function toggleClassActive() {
+    document.querySelector('.app-menu').classList.toggle("open");
+  }
+  </script>
+
+
 
 
 </body>

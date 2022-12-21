@@ -198,17 +198,33 @@
     border-bottom-left-radius: 50%;
   }
 
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  a h6 {
+    margin-bottom: 15px;
+  }
+
   .app-menu.open {
-    height: calc(100%);
-    width: calc(100% - 2rem);
+    height: calc(130%);
+    width: calc(100% - 6rem);
     margin-left: auto;
-    background-color: rgb(255 255 255);
+    background-color: rgb(255 255 255 / 100%);
     border-radius: 0;
   }
 
-  .app-menu--content {
 
-    text-align: center;
+  a h6:hover {
+    color: #23bc0e;
+  }
+
+
+  .app-menu--content {
+    text-align: left;
+    margin: 10px 20px;
   }
 
   .app-menu.open .app-menu--content {}
@@ -249,9 +265,6 @@
 
   <input type="hidden" id="friendship" name="" value="">
 
-
-  <input type="hidden" id="friendship" name="" value="">
-
   <div class="app">
 
     <div class="d-flex mb-3 " style="background-color: #ffff;">
@@ -263,14 +276,21 @@
         <p class="front"><b>รายการสินค้า</b></p>
       </div>
       <div class="p-2">
-        <a href="cart/index.php"><img class="sizeImgฺBasket" src="image/Group_2.png" alt="" /></a>
+
+        <div class="header_account_list  mini_cart_wrapper">
+          <a href="cart/index.php">
+            <div class="lnr"><img class="sizeImgฺBasket" src="image/Group_2.png" alt="" /></div>
+            <span class="item_count">2</span>
+          </a>
+        </div>
       </div>
+
+
+
       <div class="p-2">
         <img class="sizeImgMenu" src="image/Component_161.png" alt="" />
       </div>
     </div>
-
-
 
 
     <div class="app-menu" onclick="toggleClassActive()">
@@ -282,21 +302,22 @@
 
 
 
+
       <div class="app-menu--content">
-        <a href="#">
-          <h6>Menu item 1</h6>
+        <a href="index.php">
+          <h6>รายการสินค้า</h6>
         </a>
-        <a href="#">
-          <h6>Menu item 1</h6>
+        <a href="cart/index.php">
+          <h6>ตะกร้าสินค้า</h6>
         </a>
-        <a href="#">
-          <h6>Menu item 1</h6>
+        <a href="cart/address_add_form.php">
+          <h6>ที่อยู่จัดส่ง</h6>
         </a>
-        <a href="#">
-          <h6>Menu item 1</h6>
+        <a href="cart/pay_summary.php">
+          <h6>ขัอมูลบัญชีธนาคาร/บัตร</h6>
         </a>
-        <a href="#">
-          <h6>Menu item 1</h6>
+        <a href="cart/order_management.php">
+          <h6>จัดการคำสั่งซื้อ</h6>
         </a>
       </div>
     </div>

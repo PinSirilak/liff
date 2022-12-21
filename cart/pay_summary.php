@@ -209,6 +209,139 @@
   .container {
     margin: 20% 0% 10%;
   }
+
+
+
+
+  .app-menu--icon {
+    width: 35px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+  }
+
+  .app-menu--icon span {
+    background-color: #fff;
+    position: absolute;
+    border-radius: 2px;
+    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+    width: 100%;
+    height: 2px;
+    transition-duration: 500ms
+  }
+
+  .app-menu--icon span:nth-child(1) {
+    top: 0px;
+    left: 0px;
+  }
+
+  .app-menu--icon span:nth-child(2) {
+    top: 13px;
+    left: 0px;
+    opacity: 1;
+  }
+
+  .app-menu--icon span:nth-child(3) {
+    bottom: 0px;
+    left: 0px;
+  }
+
+  .app-menu.open .app-menu--icon span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 13px;
+  }
+
+  .app-menu.open .app-menu--icon span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .app-menu.open .app-menu--icon span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 13px;
+  }
+
+  .app-menu {
+    width: 35px;
+    height: 30px;
+    margin-left: auto;
+    padding: 1rem;
+    transition-duration: 500ms;
+    overflow: hidden;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+    border-bottom-left-radius: 50%;
+  }
+
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  a h6 {
+    margin-bottom: 15px;
+  }
+
+  .app-menu.open {
+    height: calc(130%);
+    width: calc(100% - 6rem);
+    margin-left: auto;
+    background-color: rgb(255 255 255 / 100%);
+    border-radius: 0;
+  }
+
+
+  a h6:hover {
+    color: #23bc0e;
+  }
+
+
+  .app-menu--content {
+    text-align: left;
+    margin: 10px 20px;
+  }
+
+  .app-menu.open .app-menu--content {}
+
+  .app-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: white;
+    position: absolute;
+    top: 3.5rem;
+    right: 0;
+    left: 0;
+  }
+
+  .app-content a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+
+
+
+  .sizeImgClose {
+    width: 30px;
+    height: 30px;
+    margin-top: 5px
+  }
+
+  .layOut_logo {
+    align-self: flex-start;
+  }
+
+  .sizeImgLogo_1 {
+    width: 80px;
+    margin-bottom: 20px;
+  }
   </style>
 
 
@@ -219,114 +352,153 @@
 <body style="background-color: #ffff;">
 
 
+  <div class="app">
 
-  <div class='row broderBotton'>
-    <div class='col-3'>
-      <img class='sizeImgLogo' src='../image/100.png' alt='' />
-    </div>
-    <div class='col-7 text-center'>
-      <p class='front'><b>จัดการคำสั่งซื้อ</b></p>
-    </div>
-    <div class='col-2' style='text-align: right;'>
-      <img class='sizeImgMenu' src='../image/Component_161.png' alt='' />
-    </div>
-  </div>
-
-
-
-
-  <div class="d-grid gap-2 col-7 mx-auto">
-    <button class="btn order_btn  w_text_order" type="button"> Order ID : 65423927</button>
-  </div>
-
-
-
-  <div class="row lay_out_order">
-    <div class="col-12"><u class="h_order">คำสั่งซื้อ</u></div>
-  </div>
-
-
-  <div class="broderB">
-    <div class="row">
-      <div class="col-3">
-        <img class="imgPro3" src="../image/P3.jpg" alt="...">
+    <div class='row broderBotton'>
+      <div class='col-3'>
+        <img class='sizeImgLogo' src='../image/100.png' alt='' />
       </div>
-      <div class="col-9">
-        <p class="p">น้ำมันปาล์มโอเลอีนแบบขวดขนาด 1 ลิตร</p>
-        <p class="pDetail">บรรจุ 12 ขวด / กล่อง</p>
-        <div class="row">
-          <div class="col-7">
-            <div class="product_variant quantity rLayOut">
-              <label>3 x 590</label>
+      <div class='col-7 text-center'>
+        <p class='front'><b>จัดการคำสั่งซื้อ</b></p>
+      </div>
+      <div class='col-2' style='text-align: right;'>
+        <img class='sizeImgMenu' src='../image/Component_161.png' alt='' />
+      </div>
+    </div>
+
+
+
+    <div class="app-menu" onclick="toggleClassActive()">
+
+
+      <div class="me-auto p-2 text-center">
+        <img class="sizeImgLogo_1" src="../image/100.png" alt="" />
+      </div>
+
+      <div class="app-menu--content">
+        <a href="../index.php">
+          <h6>รายการสินค้า</h6>
+        </a>
+        <a href="../cart/index.php">
+          <h6>ตะกร้าสินค้า</h6>
+        </a>
+        <a href="../cart/address_add_form.php">
+          <h6>ที่อยู่จัดส่ง</h6>
+        </a>
+        <a href="../cart/pay_summary.php">
+          <h6>ขัอมูลบัญชีธนาคาร/บัตร</h6>
+        </a>
+        <a href="../cart/order_management.php">
+          <h6>จัดการคำสั่งซื้อ</h6>
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="d-grid gap-2 col-7 mx-auto">
+      <button class="btn order_btn  w_text_order" type="button"> Order ID : 65423927</button>
+    </div>
+
+
+
+    <div class="row lay_out_order">
+      <div class="col-12"><u class="h_order">คำสั่งซื้อ</u></div>
+    </div>
+
+
+    <div class="broderB">
+      <div class="row">
+        <div class="col-3">
+          <img class="imgPro3" src="../image/P3.jpg" alt="...">
+        </div>
+        <div class="col-9">
+          <p class="p">น้ำมันปาล์มโอเลอีนแบบขวดขนาด 1 ลิตร</p>
+          <p class="pDetail">บรรจุ 12 ขวด / กล่อง</p>
+          <div class="row">
+            <div class="col-7">
+              <div class="product_variant quantity rLayOut">
+                <label>3 x 590</label>
+              </div>
             </div>
-          </div>
-          <div class="col-2 rLayOut">
-            1,770
+            <div class="col-2 rLayOut">
+              1,770
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="broderB">
-    <div class="row">
-      <div class="col-3">
-        <img class="imgPro3" src="../image/P4.jpg" alt="...">
-      </div>
-      <div class="col-9">
-        <p class="p">น้ำมันปาล์มโอเลอีนแบบถุงขนาด 1 ลิตร</p>
-        <p class="pDetail">บรรจุ 12 ถุง / กล่อง</p>
-        <div class="row">
-          <div class="col-7">
-            <div class="product_variant quantity rLayOut">
-              <label>4 x 590</label>
+    <div class="broderB">
+      <div class="row">
+        <div class="col-3">
+          <img class="imgPro3" src="../image/P4.jpg" alt="...">
+        </div>
+        <div class="col-9">
+          <p class="p">น้ำมันปาล์มโอเลอีนแบบถุงขนาด 1 ลิตร</p>
+          <p class="pDetail">บรรจุ 12 ถุง / กล่อง</p>
+          <div class="row">
+            <div class="col-7">
+              <div class="product_variant quantity rLayOut">
+                <label>4 x 590</label>
+              </div>
             </div>
-          </div>
-          <div class="col-2 rLayOut">
-            2,360
+            <div class="col-2 rLayOut">
+              2,360
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
 
-  <div class="broderB">
-    <div class="row ">
-      <div class="col-9">
-        <p class="pTotal_1">รวม</p>
-      </div>
-      <div class="col-3">
-        <p class="pTotal">4,130</p>
-      </div>
-    </div>
-  </div>
-
-
-
-
-  <div class="row lay_out_order">
-    <div class="col-12"><u class="h_order">คำสั่งซื้อ</u></div>
-  </div>
-
-
-  <div class="broderB">
-    <div class="row">
-      <div class="col-12 lay_out_order_1">
-        <p class="h-6">ศิริวัฒน์ ทรัพย์ทวีพงศ์</p>
-        <p class="p_font">5/353 ม.5 เทพารักษ์ 66 ตำบลบางเมือง</p>
-        <p class="p_font">อำเภอเมืองสมุทรปราการ จังหวัดสมุทรปราการ </p>
-        <p class="p_font">รหัสไปรษณ์ 10270 เบอร์โทรศัพท์ 0123456789</p>
+    <div class="broderB">
+      <div class="row ">
+        <div class="col-9">
+          <p class="pTotal_1">รวม</p>
+        </div>
+        <div class="col-3">
+          <p class="pTotal">4,130</p>
+        </div>
       </div>
     </div>
+
+
+
+
+    <div class="row lay_out_order">
+      <div class="col-12"><u class="h_order">คำสั่งซื้อ</u></div>
+    </div>
+
+
+    <div class="broderB">
+      <div class="row">
+        <div class="col-12 lay_out_order_1">
+          <p class="h-6">ศิริวัฒน์ ทรัพย์ทวีพงศ์</p>
+          <p class="p_font">5/353 ม.5 เทพารักษ์ 66 ตำบลบางเมือง</p>
+          <p class="p_font">อำเภอเมืองสมุทรปราการ จังหวัดสมุทรปราการ </p>
+          <p class="p_font">รหัสไปรษณ์ 10270 เบอร์โทรศัพท์ 0123456789</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class='d-grid gap-5 col-11 mx-auto'>
+      <a href='../cart/confirm_payment.php' class='btn abtn mt-20' type='submit'>
+        <p class='wText'>แจ้งชำระเงิน</p>
+      </a>
+    </div>
+
+
+
   </div>
 
 
-  <div class='d-grid gap-5 col-11 mx-auto'>
-    <a href='../cart/confirm_payment.php' class='btn abtn mt-20' type='submit'>
-      <p class='wText'>แจ้งชำระเงิน</p>
-    </a>
-  </div>
+  <script>
+  function toggleClassActive() {
+    document.querySelector('.app-menu').classList.toggle("open");
+  }
+  </script>
 
 
 
