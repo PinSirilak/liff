@@ -245,9 +245,6 @@
     font-size: 14px;
   }
 
-
-
-
   .sizeImgClose {
     width: 30px;
     height: 30px;
@@ -256,6 +253,21 @@
 
   .layOut_logo {
     align-self: flex-start;
+  }
+
+
+  .header_account_list p.item_count {
+    margin-left: 5px;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    background: #e6e6e6;
+    color: #222222;
+    border-radius: 100%;
+    text-align: center;
+    font-weight: 400;
+    font-size: 12px;
+    display: inline-block;
   }
   </style>
 </head>
@@ -280,7 +292,7 @@
         <div class="header_account_list  mini_cart_wrapper">
           <a href="cart/index.php">
             <div class="lnr"><img class="sizeImgฺBasket" src="image/Group_2.png" alt="" /></div>
-            <span class="item_count">2</span>
+            <p id="itemCount" class="item_count"></p>
           </a>
         </div>
       </div>
@@ -348,7 +360,8 @@
           </div>
         </div>
         <div class="p-2  col-5">
-          <button type="button" class="btn abtn "><img class="ImgฺBasketPro" src="image/Group_1.png" alt="">
+          <button type="button" class="btn abtn " onclick="addToCart()"><img class=" ImgฺBasketPro"
+              src="image/Group_1.png" alt="">
             &nbsp;ใส่ตะกร้า</button>
         </div>
       </div>
@@ -376,12 +389,14 @@
       <div class="d-flex row rLayOut">
         <div class="p-2  col-7">
           <div class="product_variant quantity">
-            <label>จำนวน &nbsp;&nbsp;</label><input class="wInput" min="1" value="1" type="number">
+            <label>จำนวน &nbsp;&nbsp;</label>
+            <input class="wInput" min="1" value="1" type="number">
             &nbsp;&nbsp;<label>ลัง</label>
           </div>
         </div>
         <div class="p-2  col-5">
-          <button type="button" class="btn abtn "><img class="ImgฺBasketPro" src="image/Group_1.png" alt="">
+          <button type="button" class="btn abtn " onclick="addToCart()"><img class="ImgฺBasketPro"
+              src="image/Group_1.png" alt="">
             &nbsp;ใส่ตะกร้า</button>
         </div>
       </div>
@@ -392,10 +407,19 @@
 
 
   <script>
+  var itemCount = 0;
+  document.getElementById("itemCount").innerHTML = 0;
+
+  function addToCart() {
+    itemCount++;
+    document.getElementById("itemCount").innerHTML = itemCount;
+
+  }
+
+
   function toggleClassActive() {
     document.querySelector('.app-menu').classList.toggle("open");
   }
-
 
 
   function getFriendship() {
